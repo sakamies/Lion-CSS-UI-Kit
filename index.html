@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Lion CSS UI Kit</title>
+  <link rel="stylesheet" href="lion-ui-kit.css" />
+  <script type="text/javascript" src="prefixfree.min.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="titlebar">
+      Lion CSS UI Kit
+    </div>
+    <div class="toolbar">
+      <div class="segmented">
+        <input checked type="radio" name="s" id="s1" />
+        <button class="textured"><label class="icon" for="s1">¹</label></button>
+        <input type="radio" name="s" id="s2" />
+        <button class="textured"><label class="icon" for="s2">²</label></button>
+        <input type="radio" name="s" id="s3" />
+        <button class="textured"><label class="icon" for="s3">³</label></button>
+      </div>
+      <input type="text" id="">
+      <div class="flexible space"></div>
+      <input class="search" type="text" id="">
+      <button class="textured"><span class="icon">S</span></button>
+    </div>
+  </div>
+  <div class="bar">
+    <span>Search:</span>
+    <input type="radio" name="q" id="q1" />
+    <label class="scope" for="q1">Site</label>
+    <input checked type="radio" name="q" id="q2" />
+    <label class="scope" for="q2">Internets</label>
+    <input class="scope" type="text" value="Someother"/>
+    <select class="scope">
+      <option value="">Name</option>
+    </select>
+    <button class="scope">Save</button>
+    <button class="scope remove">&#8722;</button>
+    <button class="scope add">+</button>
+  </div>
+  <div class="content">
+    <div class="splitview">
+      <div class="sourcelist">
+        <label class="title" for="r1">Library</label>
+        <input checked type="checkbox" name="r1" id="r1" />
+        <div class="section">
+          <input checked type="radio" name="source-item" id="i1" />
+          <label class="title" for="i1"><span class="icon">I</span> Photos</label>
+          <input type="radio" name="source-item" id="i2" />
+          <label class="title" for="i2"><span class="icon">M</span> Movies</label>
+          <input type="radio" name="source-item" id="i3" />
+          <label class="title" for="i3"><span class="icon">r</span> Podcasts <span class="badge">4</span></label>
+        </div>
+        <label class="title" for="r2">Lists</label>
+        <input checked type="checkbox" name="r2" id="r2" />
+        <div class="section">
+          <input type="radio" name="source-item" id="i4" />
+          <label class="title" for="i4"><span class="icon">F</span> Folder</label>
+          <label for="t1" class="disclosure">&#9654;</label>
+          <input checked type="checkbox" name="source-folder" id="t1" />
+          <div class="section">
+            <input type="radio" name="source-item" id="iw1" />
+            <label class="title" for="iw1">Finglish</label>
+            <input type="radio" name="source-item" id="iw2" />
+            <label class="title" for="iw2">Feta</label>
+            <input type="radio" name="source-item" id="iw3" />
+            <label class="title" for="iw3">Tablecloth</label>
+          </div>
+          <input type="radio" name="source-item" id="i5" />
+          <label class="title" for="i5"><span class="icon">F</span> Fonts</label>
+          <label for="t2" class="disclosure">&#9654;</label>
+          <input type="checkbox" name="source-folder" id="t2" />
+          <div class="section">
+            <label class="title" for="">Helvetica Neue</label>
+            <label class="title" for="">Lucida Grande</label>
+            <label class="title" for="">Segoe UI</label>
+          </div>
+          <input type="radio" name="source-item" id="i6" />
+          <label class="title" for="i6"><span class="icon">F</span> Inkblots</label>
+          <label for="t3" class="disclosure">&#9654;</label>
+          <input type="checkbox" name="source-folder" id="t3" />
+          <div class="section">
+            <label for="" class="title">Pelvic bone</label>
+            <label for="" class="title">Bat</label>
+            <label for="" class="title">Two humans</label>
+            <label for="" class="title">Butterfly</label>
+            <label for="" class="title">Rug</label>
+          </div>
+        </div>
+      </div>
+      <div class="view">
+        <p>Hi, my name is Window.</p>
+        <input type="range" name="" id="" />
+        <input type="number" name="" size="2" id="" value="3"/>
+        <p>
+          <input type="checkbox" name="e" id="e1" /> <label for="e1">Check me</label><br />
+          <input type="checkbox" name="e" id="e2" /> <label for="e2">Me too</label><br />
+        </p>
+        <p>
+          <input checked type="radio" name="y" id="y1" /> <label for="y1">Radio</label><br />  
+          <input type="radio" name="y" id="y2" /> <label for="y2">Video</label><br />  
+        </p>
+        <p>
+          <button class="push">Push button</button>
+          <button class="gradient">Gradient button</button>  
+        </p>
+        <p>
+          <div class="segmented">
+            <input checked type="radio" name="w" id="w1" />
+            <button class="push"><label for="w1">Desktop</label></button>
+            <input type="radio" name="w" id="w2" />
+            <button class="push"><label for="w2">Mobile</label></button>
+            <input type="radio" name="w" id="w3" />
+            <button class="push"><label for="w3">Web</label></button>
+          </div>
+        </p>
+        <p>
+          <textarea name="" id="" cols="20" rows="3">Textarea</textarea>
+          <div class="gradient">
+            <button>yep</button>
+            <button>nope</button>
+            <button class="icon">S</button>
+          </div>
+        </p>
+      </div>
+      <div class="view">
+        <p class="disabled">
+          <input disabled type="checkbox" name="e" id="e3" /> <label for="e3">Can't touch this</label><br />
+          <input disabled type="checkbox" name="e" id="e3" /> <label for="e3">Hammertime</label><br />
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
