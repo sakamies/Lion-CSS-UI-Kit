@@ -17,7 +17,6 @@ html {
 }
 
 body {
-  /* NOTE: For any purpose I can imagine, an actual presentation of a window inside a webkit frame should not be necessary */
   font-size: 13px;
   line-height: 1.4;
   font-family: 'Lucida Grande', Helvetica, Arial;
@@ -52,7 +51,7 @@ input {
   text-align: left;
 }
 input[type=range] {
- vertical-align: bottom; 
+ vertical-align: baseline;
 }
 
 
@@ -82,7 +81,22 @@ input[type=range] {
   .disclosure {
     display: inline-block;
     color: rgba(0,0,0,.5);
-    font-size: .7em;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    background: url(img/disclosure-triangle.png) center center no-repeat;
+    box-sizing: border-box;
+    border-radius: 0;
+    width: 11px;
+    height: 11px;
+    border-color: transparent;
+    transform: rotate(0deg);
+    transition: all .17s ease;
+    box-shadow: none;
+    opacity: .4;
+  }
+  .disclosure:checked {
+    transform: rotate(90deg);    
   }
   
   .disabled {
@@ -359,7 +373,7 @@ input.search {
 
 /* end button styles */
 
-/* something styles, source list and stuff? */
+/* source list */
   .sourcelist {
     background: white;
     background: linear-gradient(top, #eaedf2, #d3d8df);
@@ -377,7 +391,9 @@ input.search {
     border-radius: 0px 0px 3px 0px;
     border-left-width: 1px;
   }
-    .sourcelist > .title {
+    .sourcelist .section-title {
+      position: relative;
+      display: block;
       font-size: 11px;
       padding: 0px 0px 0px 8px;
       font-weight: bold;
@@ -385,7 +401,7 @@ input.search {
       text-shadow: 0px 1px 0px rgba(255,255,255,.8);
       text-transform: uppercase;
     }
-    .sourcelist > .title:hover:after {
+    .sourcelist .section-title:hover:after {
       text-transform: none;
       color: hsla(212, 10%, 50%, .7);
       content: "Show/Hide";
@@ -393,10 +409,13 @@ input.search {
       top: 0;
       right: 4px;
     }
-    .sourcelist > .title:active:after {
+    .sourcelist .section-title:active:after {
       color: hsla(215, 60%, 63%, 1);
     }
-    .sourcelist .title {
+    .sourcelist .section-title + .disclosure {
+      display: none;
+    }
+    .sourcelist .item {
       display: block;
       position: relative;
     }
@@ -421,43 +440,53 @@ input.search {
         right: 4px;
         top: 50%;
         margin-top: -7px;
-        box-shadow: 0px 1px 0px rgba(255,255,255,.5); /* TODO: can't make the badge white with just css with current html structure, need to use js for this, the box shadow is not entirely accurate to lion, but makes the badge more tolerable when the title with the badge is selected */
+        box-shadow: 0px 1px 0px rgba(255,255,255,.5); /* TODO: can't make the badge white with just css with current html structure, need to use js for this, the box shadow is not entirely accurate to lion, but makes the badge more tolerable when the item with the badge is selected */
       }
-    .sourcelist input[type=checkbox],
     .sourcelist input[type=radio] {
-      display: none;
+      -webkit-appearance: none;
+      float: left;
+      position: relative;
+      width: 100%;
+      padding: 0;
+      height: 1.84em;
+      margin-bottom: -1.84em;
+      background: none;
+      border: none;
+      box-shadow: none;
     }
     .sourcelist .section {
+      display: box;
+      box-orient: vertical;
       padding-bottom: 8px;
     }
-    .sourcelist .section .title {
+    .sourcelist .disclosure + .section {
+      display: none;
+    }
+    .sourcelist .disclosure:checked + .section {
+      display: block;
+    }
+    .sourcelist .section .item {
       padding: 0 4px 0 1.6em;
     }
-    .sourcelist .section .section .title {
+    .sourcelist .section .section .item {
       padding: 0 4px 0 3.2em;
     }
     .sourcelist .disclosure {
-      padding: 0;
+      margin-top: -1.7em;
+      width: 1.6em;
+      height: 1.6em;
       float: left;
-      margin-top: -2.629em;
       text-align: center;
-      width: 2.286em;
       vertical-align: middle;
-      line-height: 2.629em;
       position: relative;
     }
-    .sourcelist input[type=checkbox] + * {
-      display: none;
-    }
-    .sourcelist input[type=checkbox]:checked + * {
-      display: block;
-    }
-    .sourcelist input[type=radio]:checked + .title {
+    .sourcelist input[type=radio]:checked + .item {
       color: white;
       font-weight: bold;
       text-shadow: 0px 1px rgba(0,0,0,.3);
       background-clip: padding-box;
-      margin: -1px 0;
+      margin-top: -1px;
+      margin-bottom: -1px;
       border-style: solid;
       border-width: 1px 0px;
       border-color: hsla(211, 64%, 64%, 1) transparent hsla(214, 45%, 51%, 1) transparent;
