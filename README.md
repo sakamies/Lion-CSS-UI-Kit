@@ -1,7 +1,7 @@
 Lion CSS UI Kit
 ===
 
-For web designers prototyping native apps for Mac OS X Lion.
+For web designers wanting to prototype native apps for Mac OS X Lion.
 
 Any feedback would be greatly appreciated.
 
