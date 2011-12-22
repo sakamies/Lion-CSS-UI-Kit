@@ -27,7 +27,7 @@ body {
 	user-select: none;
 }
 
-button, input, textarea {
+button, input, textarea, .button {
   line-height: inherit;
   font-family: inherit;
   font-size: inherit;
@@ -106,7 +106,7 @@ input[type=range] {
 
 
 /* Input element styles */
-button {
+button, .button {
   padding: 0 8px;
 }
 input.search {
@@ -226,7 +226,9 @@ input.search {
       0px 1px 0px 0px rgba(255,255,255,.3);
   }
   .gradient button:active,
-  button.gradient:active {
+  .gradient .button:active,
+  button.gradient:active,
+  .button.gradient:active {
     position: relative;
     z-index: 200;
     border-color: hsl(0, 0%, 57%);
@@ -237,7 +239,8 @@ input.search {
     display: box;
     line-height: 20px;
   }
-  .gradient button {
+  .gradient button,
+  .gradient .button {
     border: none;
     display: block;
     border: 1px solid hsl(0, 0%, 66%);
@@ -252,7 +255,7 @@ input.search {
     font-weight: bold;
     border-radius: 10em;
   }
-  label.scope:hover {
+  label.scope:hover, label.scope:focus {
     color: white;
     text-shadow: 0px 1px 0px rgba(0,0,0,.5);
     background: linear-gradient(top, #bbbbbb, #a7a7a7);
@@ -270,7 +273,8 @@ input.search {
   label.scope:active {
     background: #747374;
   }
-  button.scope {
+  button.scope,
+  .button.scope {
     border-radius: 100px;
     background: linear-gradient(top, #f6f6f6, #e0e0e0);
     border: 1px solid rgba(0,0,0,.4);
@@ -281,6 +285,7 @@ input.search {
     text-align: center;
   }
   button.scope:active,
+  .button.scope:active,
   select.scope:active  {
     background:
       linear-gradient(bottom, #d2d2d2, #c5c5c5);
@@ -312,7 +317,8 @@ input.search {
       0px 1px 0px rgba(255,255,255,0), /* mixing the bottom bevel hilite and black transparent shadow would again look dull*/
       0px 0px 0px 1px rgba(0,0,0,.3);
   }
-  button.scope.add, button.scope.remove {  
+  button.scope.add,
+  button.scope.remove {  
     font-smoothing: antialiased; /* TODO: icons instead of the font*/
     color: #666;
     font-weight: bold;
@@ -329,7 +335,7 @@ input.search {
   .segmented input[type=radio] {
     display: none;
   }
-  .segmented button {
+  .segmented > * {
     position: relative;
   	display: block;
   	float: left;
@@ -337,15 +343,15 @@ input.search {
     border-right-width: 0;
     border-left-width: 0;
   }
-  .segmented button:first-of-type {
+  .segmented > *:first-of-type {
     border-left-width: 1px;
     border-radius: 4px 0 0 4px;
   }
-  .segmented button:last-of-type {
+  .segmented > *:last-of-type {
     border-right-width: 1px;
     border-radius: 0px 4px 4px 0;
   }
-  .segmented button:after {
+  .segmented > *:after {
     z-index: 300;
     display: block;
     position: absolute;
@@ -357,17 +363,17 @@ input.search {
     background: rgba(0,0,0,.17);
     box-shadow: 0px 1px 0px rgba(255,255,255,.1);
   }
-  .segmented :checked + button,
-  .segmented button:active {
+  .segmented > :checked + *,
+  .segmented > :active {
     z-index: 400;
   }
-  .segmented button:active:after,
-  .segmented :checked + button:after {
+  .segmented > :active:after,
+  .segmented > :checked + *:after {
     top: 1px;
     bottom: 0px;
     right: 0px;
   }
-  .segmented button:last-of-type:after {
+  .segmented > *:last-of-type:after {
     display: none;
   }
 
@@ -443,7 +449,7 @@ input.search {
         box-shadow: 0px 1px 0px rgba(255,255,255,.5); /* TODO: can't make the badge white with just css with current html structure, need to use js for this, the box shadow is not entirely accurate to lion, but makes the badge more tolerable when the item with the badge is selected */
       }
     .sourcelist input[type=radio] {
-      -webkit-appearance: none;
+/*      -webkit-appearance: none;
       float: left;
       position: relative;
       width: 100%;
@@ -452,7 +458,8 @@ input.search {
       margin-bottom: -1.84em;
       background: none;
       border: none;
-      box-shadow: none;
+      box-shadow: none;*/
+      display: none;
     }
     .sourcelist .section {
       display: box;
