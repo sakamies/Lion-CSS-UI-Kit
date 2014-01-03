@@ -41,6 +41,7 @@ input {
   padding: 0px 4px;
   text-align: left;
   background: white;
+  background: -webkit-linear-gradient(bottom, white, hsl(0, 0%, 97%));
   background: linear-gradient(bottom, white, hsl(0, 0%, 97%));
   border-radius: 3px;
   box-shadow:
@@ -58,6 +59,8 @@ input[type=range] {
 /* generic layout classes */
 .splitview {
   display: box;
+  display: -webkit-flex;
+  display: flex;
 }
 .view {
   padding: 8px;
@@ -70,6 +73,7 @@ input[type=range] {
   }
   .flexible { /* to make that spacer, or anything flex */
     box-flex: 1;
+    flex: 1;
   }
   
   .icon {
@@ -118,6 +122,8 @@ input.search {
     color: rgba(0,0,0,.78);
     text-shadow: 0px 1px 0px rgba(255,255,255,.75);
     background:
+      -webkit-linear-gradient(top, hsla(0, 0%, 100%, .8), hsla(0, 0%, 100%, 0));
+    background:
     	linear-gradient(top, hsla(0, 0%, 100%, .8), hsla(0, 0%, 100%, 0));
     background-clip: padding-box;
     box-shadow:
@@ -133,6 +139,8 @@ input.search {
     color: rgba(0,0,0,.92);
     text-shadow: 0px 1px 0px rgba(255,255,255,.93);
     background:
+      -webkit-linear-gradient(bottom, rgba(255, 255, 255,.3), rgba(255,255,255,.05) 75%, rgba(50,50,50,.1));
+    background:
       linear-gradient(bottom, rgba(255, 255, 255,.3), rgba(255,255,255,.05) 75%, rgba(50,50,50,.1));
     background-clip: padding-box;
     box-shadow:
@@ -143,6 +151,8 @@ input.search {
   :checked + .textured {
     color: white;
     text-shadow: 0px 1px 2px rgba(0,0,0,.45);
+    background:
+      -webkit-linear-gradient(top, rgba(0,0,0,.4), rgba(70,70,70,.3));
     background:
       linear-gradient(top, rgba(0,0,0,.4), rgba(70,70,70,.3));
     background-clip: padding-box;
@@ -157,6 +167,8 @@ input.search {
     color: white;
     text-shadow: 0px 1px 2px rgba(0,0,0,.45);
     background:
+      -webkit-linear-gradient(top, rgba(0,0,0,.5), rgba(0,0,0,.4));
+    background:
       linear-gradient(top, rgba(0,0,0,.5), rgba(0,0,0,.4));
     background-clip: padding-box;
     box-shadow:
@@ -168,6 +180,7 @@ input.search {
 
   /* "Push" button style */
   .push {
+    background: -webkit-linear-gradient(top, hsl(0, 0%, 99%), hsl(0, 0%, 99%) 25%, hsl(0, 0%, 95%) 50%, hsl(0, 0%, 93%) 50%, hsl(0, 0%, 93%), hsl(0, 0%, 94%));
     background: linear-gradient(top, hsl(0, 0%, 99%), hsl(0, 0%, 99%) 25%, hsl(0, 0%, 95%) 50%, hsl(0, 0%, 93%) 50%, hsl(0, 0%, 93%), hsl(0, 0%, 94%));
     border: 1px solid rgba(0,0,0,.3);
     box-shadow:
@@ -176,6 +189,7 @@ input.search {
     border-radius: 4px;
   }
   .push:active {
+    background: -webkit-linear-gradient(top, #a8bfee, #739ee7 50%, #598fe7 50%, hsl(208, 80%, 84%));
     background: linear-gradient(top, #a8bfee, #739ee7 50%, #598fe7 50%, hsl(208, 80%, 84%));
     border-color: hsla(245, 54%, 33%, .8);
     box-shadow:
@@ -184,12 +198,15 @@ input.search {
   }
   input[type=checkbox] + .push:active,
   input[type=radio] + .push:active {
+    background: -webkit-linear-gradient(top, #e0e0e0, #d5d5d5 50%, #cfcfcf 50%, #d5d5d5);
     background: linear-gradient(top, #e0e0e0, #d5d5d5 50%, #cfcfcf 50%, #d5d5d5);
     border-color: rgba(0,0,0,.3);
   }
   :checked + .push {
     color: white;
     text-shadow: 0px 1px 2px rgba(0,0,0,.45);
+    background:
+      -webkit-linear-gradient(top, rgba(143,143,143,1), rgba(156,156,156,1));
     background:
       linear-gradient(top, rgba(143,143,143,1), rgba(156,156,156,1));
     background-clip: padding-box;
@@ -201,6 +218,7 @@ input.search {
   }
   input[type=checkbox]:checked + .push:active,
   input[type=radio]:checked + .push:active {
+    background: -webkit-linear-gradient(top, rgba(113,113,113,1), rgba(126,126,126,1));
     background: linear-gradient(top, rgba(113,113,113,1), rgba(126,126,126,1));
   }
   .segmented .push:active {
@@ -219,6 +237,7 @@ input.search {
 
   /* "Gradient" button style and gradient button bar*/
   .gradient {
+    background: -webkit-linear-gradient(top, hsl(0, 0%, 99%), hsl(0, 0%, 98%) 49%, hsl(0, 0%, 92%) 53%, hsl(0, 0%, 93%));
     background: linear-gradient(top, hsl(0, 0%, 99%), hsl(0, 0%, 98%) 49%, hsl(0, 0%, 92%) 53%, hsl(0, 0%, 93%));
     border: 1px solid hsl(0, 0%, 66%);
     box-shadow:
@@ -232,11 +251,14 @@ input.search {
     position: relative;
     z-index: 200;
     border-color: hsl(0, 0%, 57%);
+    background: -webkit-linear-gradient(top, hsl(0, 0%, 73%), hsl(0, 0%, 75%) 49%, hsl(0, 0%, 70%) 53%, hsl(0, 0%, 69%));
     background: linear-gradient(top, hsl(0, 0%, 73%), hsl(0, 0%, 75%) 49%, hsl(0, 0%, 70%) 53%, hsl(0, 0%, 69%));
     
   }
   div.gradient {
     display: box;
+    display: -webkit-flex;
+    display: flex;
     line-height: 20px;
   }
   .gradient button,
@@ -258,6 +280,7 @@ input.search {
   label.scope:hover, label.scope:focus {
     color: white;
     text-shadow: 0px 1px 0px rgba(0,0,0,.5);
+    background: -webkit-linear-gradient(top, #bbbbbb, #a7a7a7);
     background: linear-gradient(top, #bbbbbb, #a7a7a7);
   }
   :checked + label.scope, label.scope:active {
@@ -276,6 +299,7 @@ input.search {
   button.scope,
   .button.scope {
     border-radius: 100px;
+    background: -webkit-linear-gradient(top, #f6f6f6, #e0e0e0);
     background: linear-gradient(top, #f6f6f6, #e0e0e0);
     border: 1px solid rgba(0,0,0,.4);
     background-clip: border-box;
@@ -288,6 +312,8 @@ input.search {
   .button.scope:active,
   select.scope:active  {
     background:
+      -webkit-linear-gradient(bottom, #d2d2d2, #c5c5c5);
+    background:
       linear-gradient(bottom, #d2d2d2, #c5c5c5);
     box-shadow:
       inset 0px 2px 2px 0px rgba(0,0,0,.17),
@@ -298,6 +324,7 @@ input.search {
     -webkit-appearance: none;
     border-radius: 100px;
     background-color: #ededed;
+    background: url(img/dropdown-updown.png) right center no-repeat, -webkit-linear-gradient(top, #f6f6f6, #e0e0e0);
     background: url(img/dropdown-updown.png) right center no-repeat, linear-gradient(top, #f6f6f6, #e0e0e0);
     border: 1px solid rgba(0,0,0,.4);
     background-clip: border-box;
@@ -382,6 +409,7 @@ input.search {
 /* source list */
   .sourcelist {
     background: white;
+    background: -webkit-linear-gradient(top, #eaedf2, #d3d8df);
     background: linear-gradient(top, #eaedf2, #d3d8df);
     padding: 2px 0;
     border: 0px solid #bbb;
@@ -497,6 +525,7 @@ input.search {
       border-style: solid;
       border-width: 1px 0px;
       border-color: hsla(211, 64%, 64%, 1) transparent hsla(214, 45%, 51%, 1) transparent;
+      background: -webkit-linear-gradient(top, hsla(209, 66%, 68%, 1), hsla(220, 55%, 58%, 1));
       background: linear-gradient(top, hsla(209, 66%, 68%, 1), hsla(220, 55%, 58%, 1));
       box-shadow: inset 0px 1px 0px hsla(209, 66%, 88%, .2);
     }
@@ -507,6 +536,9 @@ input.search {
 .header {
   text-shadow: 0px 1px 0px rgba(255,255,255,.8);
 	border-radius: 3px 3px 0 0;
+  background:
+    -webkit-linear-gradient(top, hsla(0, 0%, 92%, .98), hsla(0, 0%, 71%, .95)),
+    url(noise-hard.png);
 	background:
 		linear-gradient(top, hsla(0, 0%, 92%, .98), hsla(0, 0%, 71%, .95)),
 		url(noise-hard.png);
@@ -523,6 +555,8 @@ input.search {
     padding: 2px 0 0 8px;
     line-height: 18px;
     display: box;
+    display: -webkit-flex;
+    display: flex;
     box-align: center;
   }
   .toolbar:after {
@@ -543,6 +577,7 @@ input.search {
 
 div.scope {
   font-weight: bold;
+  background: -webkit-linear-gradient(bottom, #d9d9d9, #ededed);
   background: linear-gradient(bottom, #d9d9d9, #ededed);
   box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,.51);
   border-bottom: 1px solid #bfbfbf;
