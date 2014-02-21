@@ -2,15 +2,8 @@
 
 ## Mock up native Mac apps in your browser
 
-- Download the kit
-- Fork on Github
-
-## Feedback
-
-Any input would be greatly appreciated.
-
-Tweet to @sakamies 
-Email sakamies@gmail.com
+Any feedback would be greatly appreciated.
+Tweet to [@sakamies](http://twitter.com/sakamies)
 
 ## Compatibility
 
