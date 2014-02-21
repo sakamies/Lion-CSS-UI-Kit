@@ -424,6 +424,20 @@ input.search {
     .sourcelist .item {
       display: block;
       position: relative;
+      border-style: solid;
+      border-width: 1px 0px;
+      border-color: transparent;
+    }
+    .sourcelist input[type=radio]:checked + .item {
+      color: white;
+      font-weight: bold;
+      text-shadow: 0px 1px rgba(0,0,0,.3);
+      background-clip: padding-box;
+      border-style: solid;
+      border-width: 1px 0px;
+      border-color: hsla(211, 64%, 64%, 1) transparent hsla(214, 45%, 51%, 1) transparent;
+      background: linear-gradient(top, hsla(209, 66%, 68%, 1), hsla(220, 55%, 58%, 1));
+      box-shadow: inset 0px 1px 0px hsla(209, 66%, 88%, .2);
     }
       .sourcelist .icon {
         display: inline-block;
@@ -486,19 +500,6 @@ input.search {
       text-align: center;
       vertical-align: middle;
       position: relative;
-    }
-    .sourcelist input[type=radio]:checked + .item {
-      color: white;
-      font-weight: bold;
-      text-shadow: 0px 1px rgba(0,0,0,.3);
-      background-clip: padding-box;
-      margin-top: -1px;
-      margin-bottom: -1px;
-      border-style: solid;
-      border-width: 1px 0px;
-      border-color: hsla(211, 64%, 64%, 1) transparent hsla(214, 45%, 51%, 1) transparent;
-      background: linear-gradient(top, hsla(209, 66%, 68%, 1), hsla(220, 55%, 58%, 1));
-      box-shadow: inset 0px 1px 0px hsla(209, 66%, 88%, .2);
     }
 
 
